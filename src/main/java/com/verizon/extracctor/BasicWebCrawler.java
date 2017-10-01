@@ -37,7 +37,7 @@ public class BasicWebCrawler {
 	}
 	public void getPageLinks(String URL) throws InterruptedException, IOException {
 
-		System.setProperty("webdriver.gecko.driver", "/home/ashutoshskhandelwal/Desktop/eclipse/geckodriver");
+		System.setProperty("webdriver.gecko.driver", "/home/ashutoshskhandelwal/geckodriver");///path to gecko driver
 		WebDriver driver = new FirefoxDriver();
 		driver.get(URL);
 		Thread.sleep(500);
@@ -62,7 +62,7 @@ public class BasicWebCrawler {
 				Thread.sleep(5);
 				((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", next);
 				Thread.sleep(500);
-				if (review.size() >= 400) {
+				if (review.size() >= 4000) {
 					break;
 				}
 			}
